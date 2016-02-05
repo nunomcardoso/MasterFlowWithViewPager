@@ -1,6 +1,5 @@
 package demo.mc.nuno.appdemo.square.empty;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +8,7 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import demo.mc.nuno.appdemo.R;
-import demo.mc.nuno.appdemo.square.empty.dummy.DummyContent;
+import demo.mc.nuno.appdemo.square.empty.dummy.EmptyContent;
 
 /**
  * A list fragment representing a list of EmptySquares. This fragment
@@ -74,11 +72,13 @@ public class EmptySquareListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
+        /*setListAdapter(new ArrayAdapter<EmptyContent.EmptyItem>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                DummyContent.ITEMS));
+                EmptyContent.ITEMS));*/
+        setListAdapter(new EmptyArrayAdapter(getContext(),EmptyContent.ITEMS));
+
     }
 
     @Override
@@ -120,7 +120,7 @@ public class EmptySquareListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(EmptyContent.ITEMS.get(position).id);
     }
 
     @Override

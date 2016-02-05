@@ -5,10 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import demo.mc.nuno.appdemo.R;
-import demo.mc.nuno.appdemo.square.empty.dummy.DummyContent;
+import demo.mc.nuno.appdemo.square.empty.dummy.EmptyContent;
 
 /**
  * A fragment representing a single EmptySquare detail screen.
@@ -26,7 +27,7 @@ public class EmptySquareDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private EmptyContent.EmptyItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,7 +44,7 @@ public class EmptySquareDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = EmptyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
@@ -55,6 +56,8 @@ public class EmptySquareDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.emptysquare_detail)).setText(mItem.content);
+            ((ImageView) rootView.findViewById(R.id.emptysquare_pic)).setImageResource(
+                    getContext().getResources().getIdentifier(mItem.pic, "drawable", getContext().getPackageName()));
         }
 
         return rootView;

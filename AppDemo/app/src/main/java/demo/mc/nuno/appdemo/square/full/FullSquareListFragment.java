@@ -1,6 +1,5 @@
 package demo.mc.nuno.appdemo.square.full;
 
-import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -9,8 +8,9 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import demo.mc.nuno.appdemo.R;
-import demo.mc.nuno.appdemo.square.full.dummy.DummyContent;
+import demo.mc.nuno.appdemo.square.empty.EmptyArrayAdapter;
+import demo.mc.nuno.appdemo.square.empty.dummy.EmptyContent;
+import demo.mc.nuno.appdemo.square.full.dummy.FullContent;
 
 /**
  * A list fragment representing a list of FullSquares. This fragment
@@ -74,11 +74,12 @@ public class FullSquareListFragment extends ListFragment {
         super.onCreate(savedInstanceState);
 
         // TODO: replace with a real list adapter.
-        setListAdapter(new ArrayAdapter<DummyContent.DummyItem>(
+        /*setListAdapter(new ArrayAdapter<FullContent.FullItem>(
                 getActivity(),
                 android.R.layout.simple_list_item_activated_1,
                 android.R.id.text1,
-                DummyContent.ITEMS));
+                FullContent.ITEMS)); */
+        setListAdapter(new FullArrayAdapter(getContext(), FullContent.ITEMS));
     }
 
     @Override
@@ -120,7 +121,7 @@ public class FullSquareListFragment extends ListFragment {
 
         // Notify the active callbacks interface (the activity, if the
         // fragment is attached to one) that an item has been selected.
-        mCallbacks.onItemSelected(DummyContent.ITEMS.get(position).id);
+        mCallbacks.onItemSelected(FullContent.ITEMS.get(position).id);
     }
 
     @Override

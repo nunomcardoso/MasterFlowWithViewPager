@@ -1,5 +1,26 @@
-<TextView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools" android:id="@+id/fullsquare_detail"
-    style="?android:attr/textAppearanceLarge" android:layout_width="match_parent"
-    android:layout_height="match_parent" android:padding="16dp" android:textIsSelectable="true"
-    tools:context="demo.mc.nuno.appdemo.square.full.FullSquareDetailFragment" />
+<LinearLayout
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/fullsquare_pic"
+        android:layout_gravity="center_horizontal"
+        android:src="@drawable/square_dashed_rounded_black"
+        android:layout_marginTop="20dp" />
+
+    <TextView
+        android:id="@+id/fullsquare_detail"
+        style="?android:attr/textAppearanceLarge"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:textIsSelectable="true"
+        android:text="placeHolder"
+        android:layout_gravity="center_horizontal" />
+
+</LinearLayout>

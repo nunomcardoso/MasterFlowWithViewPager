@@ -5,10 +5,11 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import demo.mc.nuno.appdemo.R;
-import demo.mc.nuno.appdemo.square.full.dummy.DummyContent;
+import demo.mc.nuno.appdemo.square.full.dummy.FullContent;
 
 /**
  * A fragment representing a single FullSquare detail screen.
@@ -26,7 +27,7 @@ public class FullSquareDetailFragment extends Fragment {
     /**
      * The dummy content this fragment is presenting.
      */
-    private DummyContent.DummyItem mItem;
+    private FullContent.FullItem mItem;
 
     /**
      * Mandatory empty constructor for the fragment manager to instantiate the
@@ -43,7 +44,7 @@ public class FullSquareDetailFragment extends Fragment {
             // Load the dummy content specified by the fragment
             // arguments. In a real-world scenario, use a Loader
             // to load content from a content provider.
-            mItem = DummyContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
+            mItem = FullContent.ITEM_MAP.get(getArguments().getString(ARG_ITEM_ID));
         }
     }
 
@@ -55,6 +56,8 @@ public class FullSquareDetailFragment extends Fragment {
         // Show the dummy content as text in a TextView.
         if (mItem != null) {
             ((TextView) rootView.findViewById(R.id.fullsquare_detail)).setText(mItem.content);
+            ((ImageView) rootView.findViewById(R.id.fullsquare_pic)).setImageResource(
+                    getContext().getResources().getIdentifier(mItem.pic, "drawable", getContext().getPackageName()));
         }
 
         return rootView;
