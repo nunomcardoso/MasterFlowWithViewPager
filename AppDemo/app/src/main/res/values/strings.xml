@@ -11,9 +11,6 @@
     <string name="title_star_detail">Star Detail</string>
     <string name="title_activity_square">SquareActivity</string>
 
-    <string name="title_section1">Section 1</string>
-    <string name="title_section2">Section 2</string>
-    <string name="title_section3">Section 3</string>
     <string name="title_fullsquare_list">FullSquares</string>
     <string name="title_fullsquare_detail">FullSquare Detail</string>
     <string name="title_emptysquare_list">EmptySquares</string>
