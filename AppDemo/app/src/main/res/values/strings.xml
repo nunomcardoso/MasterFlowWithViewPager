@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">AppDemo</string>
+    <string name="title_activity_login">ConceptLogin</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_user_panel">UserPanelActivity</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="title_star_list">Stars</string>
+    <string name="title_star_detail">Star Detail</string>
+    <string name="title_activity_square">SquareActivity</string>
+
+    <string name="title_section1">Section 1</string>
+    <string name="title_section2">Section 2</string>
+    <string name="title_section3">Section 3</string>
+    <string name="title_fullsquare_list">FullSquares</string>
+    <string name="title_fullsquare_detail">FullSquare Detail</string>
+    <string name="title_emptysquare_list">EmptySquares</string>
+    <string name="title_emptysquare_detail">EmptySquare Detail</string>
+</resources>
