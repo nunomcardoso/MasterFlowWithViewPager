@@ -17,44 +17,115 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="false" />
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Triangle"
-        android:id="@+id/button2"
-        android:layout_below="@+id/textView"
+    <!-- Some sort of grid -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:onClick="onClickToast"/>
+        android:weightSum="1"
+        android:id="@+id/grid"
+        android:layout_below="@+id/textView">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Star"
-        android:id="@+id/button3"
-        android:layout_below="@+id/textView"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_toEndOf="@+id/button2"
-        android:onClick="onClickStar"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:orientation="vertical">
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Circle"
-        android:id="@+id/button4"
-        android:layout_below="@+id/button2"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:onClick="onClickToast"/>
 
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Square"
-        android:id="@+id/button5"
-        android:layout_alignBottom="@+id/button4"
-        android:layout_toRightOf="@+id/button2"
-        android:layout_toEndOf="@+id/button2"
-        android:onClick="onClickSquare"/>
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="fill_parent"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="10dip"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/image1"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/circle"
+                            android:layout_width="fill_parent"
+                            android:layout_gravity="center"
+                            android:onClick="onClickToast"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="10dip"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/image2"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/star"
+                            android:layout_width="fill_parent"
+                            android:layout_gravity="center"
+                            android:onClick="onClickStar"/>
+                    </LinearLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_weight="1"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="10dip"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/image3"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/triangle"
+                            android:layout_width="fill_parent"
+                            android:layout_gravity="center"
+                            android:onClick="onClickToast"/>
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:orientation="vertical"
+                        android:layout_width="0dp"
+                        android:layout_weight="1"
+                        android:padding="10dip"
+                        android:layout_height="fill_parent">
+
+                        <ImageView
+                            android:id="@+id/image4"
+                            android:layout_height="fill_parent"
+                            android:adjustViewBounds="true"
+                            android:scaleType="fitCenter"
+                            android:src="@drawable/square"
+                            android:layout_width="fill_parent"
+                            android:layout_gravity="center"
+                            android:onClick="onClickSquare"/>
+                    </LinearLayout>
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
 
 </RelativeLayout>
