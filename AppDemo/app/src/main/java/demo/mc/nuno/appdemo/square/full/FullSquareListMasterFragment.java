@@ -11,7 +11,6 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import demo.mc.nuno.appdemo.R;
-import demo.mc.nuno.appdemo.square.full.FullSquareDetailFragment;
 
 /**
  * Created by nuno on 05/02/16.
@@ -23,7 +22,7 @@ public class FullSquareListMasterFragment extends Fragment implements FullSquare
      */
     private boolean mTwoPane;
     FragmentActivity activity;
-    View frameLayout;
+    View linearLayout;
 
     public FullSquareListMasterFragment() {
     }
@@ -32,13 +31,13 @@ public class FullSquareListMasterFragment extends Fragment implements FullSquare
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        frameLayout = inflater.inflate(R.layout.fragment_full_square_master, container, false);
+        linearLayout = inflater.inflate(R.layout.fragment_full_square_master, container, false);
 
         Fragment listFragment = new FullSquareListFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.frame_full_square_main, listFragment);
 
-        if (frameLayout.findViewById(R.id.frame_full_square_extra) != null) {
+        if (linearLayout.findViewById(R.id.frame_full_square_extra) != null) {
             mTwoPane = true;
 
             Fragment detailFragment = new FullSquareDetailFragment();
@@ -47,7 +46,7 @@ public class FullSquareListMasterFragment extends Fragment implements FullSquare
 
         transaction.commit();
 
-        return frameLayout;
+        return linearLayout;
     }
 
     @Override

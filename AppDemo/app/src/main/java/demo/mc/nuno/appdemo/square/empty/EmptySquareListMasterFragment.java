@@ -22,7 +22,7 @@ public class EmptySquareListMasterFragment extends Fragment implements EmptySqua
      */
     private boolean mTwoPane;
     FragmentActivity activity;
-    View frameLayout;
+    View linearLayout;
 
     public EmptySquareListMasterFragment() {
     }
@@ -31,13 +31,13 @@ public class EmptySquareListMasterFragment extends Fragment implements EmptySqua
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
 
-        frameLayout = inflater.inflate(R.layout.fragment_empty_square_master, container, false);
+        linearLayout = inflater.inflate(R.layout.fragment_empty_square_master, container, false);
 
         Fragment listFragment = new EmptySquareListFragment();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.add(R.id.frame_empty_square_main, listFragment);
 
-        if (frameLayout.findViewById(R.id.frame_empty_square_extra) != null) {
+        if (linearLayout.findViewById(R.id.frame_empty_square_extra) != null) {
             mTwoPane = true;
 
             Fragment detailFragment = new EmptySquareDetailFragment();
@@ -46,7 +46,7 @@ public class EmptySquareListMasterFragment extends Fragment implements EmptySqua
 
         transaction.commit();
 
-        return frameLayout;
+        return linearLayout;
     }
 
     @Override
